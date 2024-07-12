@@ -33,6 +33,15 @@
     macros {
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Bootloader {
+            bindings = <&bootloader>;
+            key-positions = <6 7 35 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
