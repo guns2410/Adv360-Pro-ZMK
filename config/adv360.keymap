@@ -36,9 +36,19 @@
     combos {
         compatible = "zmk,combos";
 
-        Bootloader {
+        Bootloader-left {
             bindings = <&bootloader>;
-            key-positions = <6 7 35 38>;
+            key-positions = <6 20 34>;
+        };
+
+        cmd-space {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <65 70>;
+        };
+
+        bootloader-right {
+            bindings = <&bootloader>;
+            key-positions = <7 21 39>;
         };
     };
 
