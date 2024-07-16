@@ -17,6 +17,27 @@
             bindings = <&kp RET>;
         };
 
+        clear_everything: clear_everything {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(A) &kp DELETE>;
+            label = "CLEAR_EVERYTHING";
+        };
+
+        tmux_next: tmux_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A) &kp N>;
+            label = "TMUX_NEXT";
+        };
+
+        tmux_prev: tmux_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A) &kp P>;
+            label = "TMUX_PREV";
+        };
+
         #endif
 
         hm: homerow_mods {
@@ -57,11 +78,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog 1                                                                       &mo 3                    &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &none                                                                        &none                    &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &none                     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL      &none                    &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                                        &kp HOME      &kp PG_UP                                          &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2      &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &hm LEFT_SHIFT BACKSPACE  &mo 2      &mo 1         &kp PG_DN  &hm RCTRL RET  &hm RIGHT_COMMAND SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 2
+&kp EQUAL            &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog 1                                                                                    &mo 3              &kp N6  &kp N7      &kp N8      &kp N9    &kp N0    &kp MINUS
+&kp TAB              &kp Q      &kp W     &kp E     &kp R      &kp T   &kp COLON                                                                                 &kp DOUBLE_QUOTES  &kp Y   &kp U       &kp I       &kp O     &kp P     &kp BSLH
+&kp ESC              &kp A      &kp S     &kp D     &kp F      &kp G   &kp UNDERSCORE   &kp LCTRL                &kp LALT      &kp LGUI   &kp RCTRL              &kp SINGLE_QUOTE   &kp H   &kp J       &kp K       &kp L     &kp SEMI  &kp SQT
+&hm LSHFT LC(LA(M))  &kp Z      &kp X     &kp C     &kp V      &kp B                                             &kp HOME      &kp PG_UP                                            &kp N   &kp M       &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
+&mo 2                &kp GRAVE  &kp CAPS  &kp PLUS  &kp EQUAL          &lt 2 BACKSPACE  &mt LS(LC(LGUI)) DELETE  &kp END       &kp PG_DN  &hm RIGHT_COMMAND RET  &hm RCTRL SPACE            &tmux_next  &tmux_prev  &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
@@ -77,11 +98,11 @@
 
         fn {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                      &mo 3   &kp F7                &kp F8                 &kp F9            &kp F10            &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &none                                       &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &kp LEFT_ARROW        &kp DOWN_ARROW         &kp UP_ARROW      &kp RIGHT_ARROW    &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans            &trans             &trans   &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                        &trans                 &trans            &trans             &trans   &trans
+&kp F1  &kp F2        &kp F3         &kp F4       &kp F5                &kp F6                 &tog 1                                                 &mo 3   &kp F7                &kp F8                 &kp F9            &kp F10            &kp F11    &kp F12
+&trans  &kp QUESTION  &kp MINUS      &kp PERCENT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &clear_everything                                      &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LC(P)  &trans
+&trans  &kp AT_SIGN   &kp ASTERISK   &kp SLASH    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none              &trans  &trans      &trans  &trans  &none   &kp LEFT_ARROW        &kp DOWN_ARROW         &kp UP_ARROW      &kp RIGHT_ARROW    &trans     &trans
+&trans  &trans        &kp SEMICOLON  &kp TAB      &kp LEFT_BRACE        &kp RIGHT_BRACE                                   &trans      &trans                  &kp LC(N)             &kp RIGHT_BRACE        &trans            &trans             &trans     &trans
+&trans  &trans        &trans         &trans       &trans                                       &trans             &trans  &trans      &trans  &trans  &trans                        &trans                 &trans            &trans             &trans     &trans
             >;
         };
 
