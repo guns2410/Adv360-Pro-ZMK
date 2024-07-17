@@ -70,13 +70,6 @@
             #binding-cells = <0>;
             bindings = <&kp END>, <&kp LS(END)>;
         };
-
-        rust_arrow: rust_arrow {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RUST_ARROW";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&rust_arrow_text>;
-        };
     };
 
     macros {
