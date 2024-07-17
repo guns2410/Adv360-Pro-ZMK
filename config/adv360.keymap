@@ -49,6 +49,20 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        tdhome: tdhome {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDHOME";
+            #binding-cells = <0>;
+            bindings = <&kp HOME>, <&kp LS(HOME)>;
+        };
+
+        tdend: tdend {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDEND";
+            #binding-cells = <0>;
+            bindings = <&kp END>, <&kp LS(END)>;
+        };
     };
 
     macros {
@@ -81,8 +95,8 @@
 &kp EQUAL            &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog 1                                                                                                &mo 3              &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
 &kp TAB              &kp Q      &kp W     &kp E     &kp R      &kp T   &kp COLON                                                                                             &kp DOUBLE_QUOTES  &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &kp ESC              &kp A      &kp S     &kp D     &kp F      &kp G   &kp UNDERSCORE   &kp LS(LC(LEFT_COMMAND))  &kp LALT      &kp LA(LEFT_CONTROL)  &kp RCTRL              &kp SINGLE_QUOTE   &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&hm LSHFT LC(LA(M))  &kp Z      &kp X     &kp C     &kp V      &kp B                                              &kp HOME      &kp PG_UP                                                       &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 2                &kp GRAVE  &kp CAPS  &kp PLUS  &kp EQUAL          &lt 2 BACKSPACE  &mt LEFT_SHIFT DELETE     &kp END       &kp PG_DN             &hm RIGHT_COMMAND RET  &hm RCTRL SPACE            &none   &none      &kp LBKT  &kp RBKT  &mo 2
+&hm LSHFT LC(LA(M))  &kp Z      &kp X     &kp C     &kp V      &kp B                                              &tdhome       &kp PG_UP                                                       &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&mo 2                &kp GRAVE  &kp CAPS  &kp PLUS  &kp EQUAL          &lt 2 BACKSPACE  &mt LEFT_SHIFT DELETE     &tdend        &kp PG_DN             &hm RIGHT_COMMAND RET  &hm RCTRL SPACE            &none   &none      &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
