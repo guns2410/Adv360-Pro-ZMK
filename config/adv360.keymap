@@ -123,7 +123,7 @@
 &trans  &kp QUESTION  &kp MINUS      &kp PERCENT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none                                                    &none          &kp LESS_THAN      &kp GREATER_THAN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LC(P)  &trans
 &trans  &kp AT_SIGN   &kp ASTERISK   &kp SLASH    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none      &trans     &trans      &trans  &trans         &none          &kp LEFT_ARROW     &kp DOWN_ARROW    &kp UP_ARROW      &kp RIGHT_ARROW    &trans     &trans
 &trans  &trans        &kp SEMICOLON  &kp TAB      &kp LEFT_BRACE        &kp RIGHT_BRACE                              &trans      &trans                                &kp DOUBLE_QUOTES  &kp SQT           &trans            &trans             &trans     &trans
-&trans  &trans        &trans         &trans       &trans                                       &kp LG(C)  &kp LG(V)  &trans      &trans  &kp LG(ENTER)  &kp LC(SPACE)                     &kp LC(O)         &kp RC(P)         &trans             &trans     &trans
+&trans  &trans        &trans         &trans       &trans                                       &kp LG(C)  &kp LG(V)  &trans      &trans  &kp LG(ENTER)  &kp LC(SPACE)                     &kp LC(O)         &kp RC(I)         &trans             &trans     &trans
             >;
         };
 
